@@ -6,13 +6,23 @@ import Quotes from './components/Quotes';
 import Lamp from './components/Lamp';
 
 class App extends Component {
+
+  state = {
+    working: true
+  };
+
+  handleClick = () => {
+    this.setState({ working: !this.state.working });
+  };
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className={this.state.working?"App-logo":"App-logo-false"} alt="logo" />
           <h1 className="App-title">Thomas Poil Quotes</h1>
         </header>
+        <button onClick={this.handleClick}>Switch</button>
         <Lamp on />
         <Lamp />
         <Quote 
