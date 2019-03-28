@@ -16,13 +16,20 @@ class App extends Component {
   };
 
   render() {
+    const logoState = this.state.working?"App-logo":"App-logo-false"
+    const homerState = this.state.working?"Homer is working, make him stop!":"Homer is not working, wake him up!!"
+    const homerImage = this.state.working?"https://i.imgflip.com/nuz0r.jpg":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY1dpJ1z265sBvQAsg7tyKNje2XvcZlYUc7Lso-QbuPO3QXVh09Q"
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className={this.state.working?"App-logo":"App-logo-false"} alt="logo" />
+          <img src={logo} className={logoState} alt="logo" />
           <h1 className="App-title">Thomas Poil Quotes</h1>
         </header>
-        <button onClick={this.handleClick}>Switch</button>
+        <div>
+          <p>Click on the button to make sure Homer does what he should!</p>
+          <button onClick={this.handleClick}>{homerState}</button>
+        </div>
+        <img src={homerImage} alt="Homer"/>
         <Lamp on />
         <Lamp />
         <Quote 
