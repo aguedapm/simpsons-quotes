@@ -4,6 +4,7 @@ import './App.css';
 import Quote from './components/Quote';
 import Quotes from './components/Quotes';
 import Lamp from './components/Lamp';
+import NameForm from './components/NameForm';
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
         <img src={homerImage} alt="Homer"/>
         <Lamp on />
         <Lamp />
+        <NameForm/>
         <Quote 
           quote="I believe the children are the future... Unless we stop them now!"
           character="Homer Simpson"
